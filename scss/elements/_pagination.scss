@@ -1,0 +1,30 @@
+/*Пагинация*/
+
+.b-pagination{
+  @include inline-block-list;
+  text-align: center;
+  a{
+    @include text($s:17px);
+    color:#111111;
+  }
+  li{
+    margin-right: 8px;
+  }
+  &__prev,&__next{
+    display: inline-block;
+    height: 0;
+    width:0;
+    border-color:$color1;
+    border-top:5px solid transparent;
+    border-bottom:5px solid transparent;
+  }
+  &__prev{
+    border-right: 10px solid $color1;
+  }
+  &__next{
+    border-left: 10px solid $color1;
+  }
+  &__current{
+    font-weight: bold;
+  }
+}

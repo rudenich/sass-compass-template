@@ -1,0 +1,2 @@
+call compass watch ./../
+

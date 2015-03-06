@@ -1,0 +1,323 @@
+/* ==|====================
+   Все иконки на сайте
+   Module/Icons
+   Method by @vtcreative
+   Documentation : http://goo.gl/kWyRmT
+   ======================= */
+
+$sprites: sprite-map("icons/*.png");
+$sprites2x: sprite-map("icons-2x/*.png");
+
+
+$spritesUrl: sprite-url($sprites);
+$sprites2xUrl: sprite-url($sprites2x);
+[class^="icon-"],
+[class*=" icon-"] {
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-image: $spritesUrl;
+
+  @media (-webkit-min-device-pixel-ratio: 1.5),
+         (-o-min-device-pixel-ratio: 3/2),
+         (min-device-pixel-ratio: 1.5) {
+    background-image: $sprites2xUrl;
+    background-size: ceil(image-width(sprite-path($sprites2x)) / 2) auto;
+  }
+}
+
+@mixin sprite-background($name) {
+  background-position: sprite-position($sprites, $name);
+  height: image-height(sprite-file($sprites, $name));
+  width: image-width(sprite-file($sprites, $name));
+
+  @media (-webkit-min-device-pixel-ratio: 1.5),
+         (-o-min-device-pixel-ratio: 3/2),
+         (min-device-pixel-ratio: 1.5) {
+    background-position: 0 round(nth(sprite-position($sprites2x, $name), 2) / 2);
+  }
+}
+
+@mixin sprite-background-full($name) {
+  background-image: $spritesUrl;
+
+  @media (-webkit-min-device-pixel-ratio: 1.5),
+  (-o-min-device-pixel-ratio: 3/2),
+  (min-device-pixel-ratio: 1.5) {
+    background-image: $sprites2xUrl;
+    background-size: ceil(image-width(sprite-path($sprites2x)) / 2) auto;
+  }
+
+
+  background-position: sprite-position($sprites, $name);
+  height: image-height(sprite-file($sprites, $name));
+  width: image-width(sprite-file($sprites, $name));
+
+  @media (-webkit-min-device-pixel-ratio: 1.5),
+  (-o-min-device-pixel-ratio: 3/2),
+  (min-device-pixel-ratio: 1.5) {
+    background-position: 0 round(nth(sprite-position($sprites2x, $name), 2) / 2);
+  }
+}
+
+[class^="icon-"],
+[class*=" icon-"]{
+  &.pull-left{margin-right: 4px;}
+  &.pull-right{margin-left: 4px;}
+}
+
+.icon-facebook {
+  //@include sprite-background(facebook);
+}
+.icon-plus {
+  @include media-large{
+    @include sprite-background(plus);
+  }
+
+  @include media-medium{
+    @include sprite-background(plus-medium);
+  }
+}
+
+.icon-plus-small {
+  @include sprite-background(plus-small);
+}
+
+.icon-plus-small-gray {
+  @include sprite-background(plus-small-gray);
+  vertical-align: middle;
+}
+.icon-minus-small-gray {
+  @include sprite-background(minus-small-gray);
+  vertical-align: middle;
+}
+
+.icon-plus-small-green {
+  @include sprite-background(plus-small-green);
+  vertical-align: middle;
+}
+.icon-plus-small-orange {
+  @include sprite-background(plus-small-orange);
+  vertical-align: middle;
+}
+
+.icon-question-small-gray {
+  @include sprite-background(question-small-gray);
+  vertical-align: middle;
+}
+
+.icon-search{
+  @include media-medium{
+    @include sprite-background(search-medium);
+  }
+  @include media-large{
+    @include sprite-background(search);
+  }
+
+}
+
+.icon-search-blue{
+  @include sprite-background(search-blue);
+}
+
+
+
+
+.icon-proposal-globe{
+
+  @include media-large{
+    @include sprite-background(proposal-globe);
+  }
+  
+  @include media-medium{
+    @include sprite-background(proposal-globe-medium);
+  }
+
+}
+
+.icon-proposal-speeker{
+  @include media-large{
+    @include sprite-background(proposal-speeker);
+  }
+
+  @include media-medium{
+    @include sprite-background(proposal-speeker-medium);
+  }
+}
+
+
+.icon-proposal-hand{
+  @include media-large{
+    @include sprite-background(proposal-hand);
+  }
+
+  @include media-medium{
+    @include sprite-background(proposal-hand-medium);
+  }
+}
+
+
+.icon-linkedin{
+  @include sprite-background(linkedin);
+}
+.icon-flat-linkedin{
+  @include sprite-background(flat_linkedin);
+}
+.icon-flat-facebook{
+  @include sprite-background(flat_facebook);
+}
+.icon-validate{
+  @include sprite-background(ok_validate);
+}
+.icon-no-validate{
+  @include sprite-background(no_validate);
+}
+.icon-g_plus{
+  @include sprite-background(g_plus);
+}
+.icon-o{
+  @include sprite-background(o_arrow);
+}
+.icon-o2{
+  @include sprite-background(o_arrow2);
+}
+.icon-yelp{
+  @include sprite-background(yelp);
+}
+
+.icon-close{
+  @include sprite-background(close);
+}
+
+.icon-close-white{
+  @include sprite-background(close-white);
+}
+
+.icon-mobile-sidebar-trigger-is-open{
+  @include sprite-background(mobile-sidebar-trigger-opened);
+}
+
+.icon-mobile-sidebar-trigger-is-close{
+  @include sprite-background(mobile-sidebar-trigger-closed);
+}
+
+.icon-yes{
+  @include sprite-background(yes);
+}
+.icon-yes-green{
+  @include sprite-background(yes-green);
+}
+
+.icon-no{
+  @include sprite-background(no);
+}
+
+.icon-tooltip-check{
+  @include sprite-background(index-tooltip-check);
+}
+
+.icon-tooltip-clock{
+  @include sprite-background(index-tooltip-clock);
+}
+
+.icon-tooltip-dollar{
+  @include sprite-background(index-tooltip-dollar);
+}
+
+.icon-tooltip-handshake{
+  @include sprite-background(index-tooltip-handshake);
+}
+
+.icon-tooltip-phone{
+  @include sprite-background(index-tooltip-phone);
+}
+
+.icon-tooltip-profile{
+  @include sprite-background(index-tooltip-profile);
+}
+
+.icon-tooltip-rocket{
+  @include sprite-background(index-tooltip-rocket);
+}
+
+.icon-copyright{
+  @include sprite-background(copyright);
+}
+
+.icon-share-linkedin{
+  @include sprite-background(linkedin);
+}
+.icon-share-facebook{
+  @include sprite-background(facebook);
+}
+.icon-share-twitter{
+  @include sprite-background(twitter);
+}
+.icon-share-mail{
+  @include sprite-background(mail);
+}
+.icon-share-yandex{
+  @include sprite-background(yandex);
+}
+
+.icon-share-vk{
+  @include sprite-background(vk);
+}
+.icon-share-google{
+  @include sprite-background(google);
+}
+.icon-share-instagram{
+  @include sprite-background(instagram);
+}
+.icon-share-flickr{
+  @include sprite-background(flickr);
+}
+.icon-share-odno{
+  @include sprite-background(odno);
+}
+
+.icon-share-chat{
+  @include sprite-background(chat);
+}
+
+
+
+.icon-share-linkedin-done{
+  @include sprite-background(linkedin-done);
+}
+.icon-share-facebook-done{
+  @include sprite-background(facebook-done);
+}
+.icon-share-twitter-done{
+  @include sprite-background(twitter-done);
+}
+.icon-share-mail-done{
+  @include sprite-background(mail-done);
+}
+.icon-share-yandex-done{
+  @include sprite-background(yandex-done);
+}
+
+.icon-share-vk-done{
+  @include sprite-background(vk-done);
+}
+.icon-share-google-done{
+  @include sprite-background(google-done);
+}
+.icon-share-instagram-done{
+  @include sprite-background(instagram-done);
+}
+.icon-share-flickr-done{
+  @include sprite-background(flickr-done);
+}
+.icon-share-odno-done{
+  @include sprite-background(odno-done);
+}
+
+.icon-share-chat-done{
+  @include sprite-background(chat-done);
+}
+
+
+
+
+

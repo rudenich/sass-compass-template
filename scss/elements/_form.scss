@@ -1,0 +1,68 @@
+/* ==|====================
+   Базовые стили для элементов форм
+   ======================= */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"],
+input[type="search"],
+textarea {
+  font-size: 1.1em;
+  font-family: $font1;
+  font-weight: 300;
+  color: #888;
+  padding: .5em;
+  outline: 0;
+  border:1px solid $color1;
+  @include border-radius(4px);
+  background-color: #fff;
+  height: 52px;
+  text-align: left;
+  &:hover {
+  //        border-color: #a5a5a5;
+  }
+  &:focus {
+  //        border-color: #999;
+  }
+  @include form-placeholer{
+    font-size: 18px;
+    color:#888;
+    text-align: center;
+  }
+  &.is-error{
+    border-color:red;
+    @include box-shadow(1px 0 2px 0px red,-1px 0 2px 0px red);
+  }
+}
+input[type="text"].m-strong{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color:#000000;
+}
+
+.row-input{
+  padding: 0;
+  margin: 16px 0;
+  label{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 23px;
+    line-height:1.1;
+  }
+}
+
+textarea{
+  text-align: left;
+  height: 235px;
+  resize: none;
+  overflow: auto;
+}
+.textarea-small{
+  height: 135px;
+  font-size: 14px;
+  line-height: 1.15;
+  color: #181818;
+  letter-spacing: -.5px;
+}

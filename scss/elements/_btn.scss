@@ -1,0 +1,208 @@
+/* ==|====================
+   Все кнопки на сайте
+   ======================= */
+
+.btn {
+    @include filter-gradient(#33abe4, #018aca); // IE6-8
+    @include background-image(linear-gradient(#33abe4, #018aca));
+    @include border-radius(2px);
+    @include inline-block();
+    padding: .2em .7em;
+    border: solid 1px #3897bd;
+    color: #fff;
+    @include box-shadow(inset 0 2px 0px rgba(#fff, .75));
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    &:hover {
+        @include opacity(.9);
+        color: #fff;
+    }
+    &:active {
+        box-shadow: inset 0 1px 2px rgba(#000, .2);
+    }
+  &.btn-orange{
+    @include btn-gradient(#ff9500,#cd7800);
+  }
+  &.btn-green{
+    @include btn-gradient(#00cd00,#00a500);
+  }
+  &.btn-blue-dark{
+    @include btn-gradient(#316d87,#00344a);
+  }
+  &.btn-blue{
+    @include btn-gradient(#2ca6e0,#028bca);
+  }
+
+
+}
+.btn__account{
+  @include border-radius(4px);
+  @include inline-block();
+  min-width: 123px;
+  padding: .2em 25px;
+  background: #007abf;
+  color: #fff !important;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  border: 1px solid #fff;
+  margin-bottom: 6px;
+  @include box-shadow(0 4px 0px rgba(#000, .5));
+  &:hover {
+    @include opacity(.9);
+    color: #fff;
+  }
+  &:active{
+    box-shadow: 0 2px 3px rgba(#000, .5), inset 0 0px 2px rgba(#000, .2);
+  }
+  &.btn-green{background: #00cd00;}
+  &.btn-orange{background: #ff9500;}
+  &--save{}
+}
+.btn__account--save{
+  @extend .btn__account;
+  line-height: 1.2;
+  min-width: 70px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.btn__account--save-all{
+  @extend .btn__account--save;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.btn__link{
+  &:hover{text-decoration: none;}
+  background: none;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 18px;
+  color: #007abf;
+  border: medium none;
+  outline: none;
+  @include inline-block();
+}
+
+@mixin btn($color) {
+    @extend .btn;
+    @include filter-gradient($color, darken($color, 10%)); // IE6-8
+    @include background-image(linear-gradient($color, darken($color, 10%)));
+    color: #fff;
+    border-color: darken($color, 10%);
+    text-shadow: 0 1px 1px rgba(#000, 0.1);
+    &:hover {
+        background: darken($color1, 10%);
+    }
+}
+
+
+.btn-color1 {
+    @include btn($color1);
+}
+.btn-color2 {
+    @include btn($color2);
+}
+
+.b-user_submit-btn_control{
+  width: 215px;
+  .btn{
+    padding: .5em 40px;
+    line-height: 1;
+    width: 100%;margin-bottom: 6px;
+  }
+}
+
+.b-sortable-btn{
+  margin: 26px 0 30px 0; //for account page
+  .btn__account{
+    min-width: 75px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 15px;
+  }
+  .b-box__label{
+    margin-left: 6px;
+  }
+}
+
+button, input[type=submit]{
+  &:active, &:focus{outline: none;}
+}
+
+.btn__popup{
+  &.s-small{
+    font-size: 21px;
+    padding-top: .5em;
+    padding-bottom: .4em;
+  }
+  &.p-small{
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  &.p-middle{
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  &.p-large{
+    padding-left: 16%;
+    padding-right: 16%;
+  }
+  &.p-huge{
+    padding-left: 11%;
+    padding-right: 11%;
+    font-size: 1.75rem;
+  }
+  @extend .btn__account;
+  font-size: 23px;
+  line-height: 1.3;
+  padding: .3em 25px;
+  min-height: 48px;
+  &-link{
+    &:hover{text-decoration: none;}
+    font-size: 28px;
+    text-decoration: underline;
+    line-height: 1;
+  }
+}
+
+
+$category-tag-color-map:(
+  gray:#888,
+  green:#39681e,
+  blue:#007bc3,
+  red:#ba2d20
+);
+.b-category-tag{
+  @include border-radius(3px);
+  padding:0 5px 4px;
+  font-size: 16px;
+  color:white;
+  display: inline-block;
+
+  &__delete{
+    vertical-align: middle;
+    margin-left: 5px;
+
+
+  }
+
+  @each $key,$value in $category-tag-color-map{
+    &.m-#{$key}{
+      background-color: $value;
+    }
+  }
+  /*&.m-gray{
+    background-color: #888888;
+  }
+  &.m-gray{
+    background-color: #888888;
+  }
+  &.m-gray{
+    background-color: #888888;
+  }
+  &.m-gray{
+    background-color: #888888;
+  }*/
+}
