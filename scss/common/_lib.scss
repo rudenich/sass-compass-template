@@ -1,0 +1,48 @@
+.clearfix{
+  @include clearfix();
+}
+
+/*
+Модификаторы текста
+*/
+.m-text-left{
+  text-align: left;
+}
+
+.m-text-right{
+  text-align: right;
+}
+
+.m-text-center{
+  text-align: center;
+}
+
+.m-text-justify{
+  text-align: justify;
+}
+
+
+
+.m-text-uppercase{
+  text-transform: uppercase;
+}
+
+.m-text-lowercase{
+  text-transform: lowercase;
+}
+
+.m-text-capitalize{
+  text-transform: capitalize;
+}
+
+.m-text-underline{
+  text-decoration: underline;
+}
+
+.m-text-overline{
+  text-decoration: overline;
+}
+
+.m-text-line-through{
+  text-decoration: line-through;
+}

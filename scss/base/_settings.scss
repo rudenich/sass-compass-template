@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+$audio-canvas-video: false; // True | False
+
+$font-family:'Avenir Next';
+$html-font-size:62.5%;
+
+
+
+$s320:320px;
+$s375:375px;
+$s480:480px;
+$s568:568px;
+$s600:600px;
+$s768:768px;
+$s800:800px;
+$s960:960px;
+$s1024:1024px;
+$s1368:1368px;
+$s1600:1600px;
+$s1920:1920px;
+
+
+
+$device-small:$s320;
+$device-medium:$s568;
+$device-large:$s960;
+
+@mixin media-small(){
+  @media (max-width: $device-medium - 1){
+    @content;
+  }
+}
+
+@mixin media-medium(){
+  @media (min-width: $device-medium) and (max-width: ($device-large - 1)){
+    @content;
+  }
+}
+@mixin media-medium-down(){
+  @media (max-width: ($device-large - 1)){
+    @content;
+  }
+}
+@mixin media-large(){
+  @media (min-width: $device-large){
+    @content;
+  }
+}
+
+body{
+  font-family: $font-family;
+}
+
+html{
+  font-size: $html-font-size;
+}
