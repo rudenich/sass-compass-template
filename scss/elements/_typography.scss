@@ -1,0 +1,47 @@
+/* Дополнительная стилизация текста*/
+@mixin p-text-header{
+  @include text($s:23px,$w:400);
+  @include inline-block;
+}
+
+@mixin p-text-header__bold{
+  @include p-text-header;
+  @include text($w:700);
+}
+
+@mixin ex-list-text{
+  @include text($s:16px,$w:400);
+}
+
+@mixin ex-list-text-bold{
+  @include ex-list-text;
+  @include text($w:700);
+}
+
+@mixin ex-text-main{
+  font-size: 14px;
+  color:#111;
+}
+
+@mixin ex-text-main-bold{
+  font-size: 14px;
+  font-weight: bold;
+  color:#111;
+}
+
+
+
+.el-heading{
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.4em;
+}
+
+.el-footer-text{
+  color:#111;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
