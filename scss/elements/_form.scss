@@ -1,3 +1,11 @@
+$form-input-font-size:1em;
+$form-input-font-color:#111;
+$form-input-border-radius:3px;
+
+$form-input-border-width:1px;
+$form-input-border-color:#111;
+
+
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -5,48 +13,11 @@ input[type="password"],
 input[type="date"],
 input[type="search"],
 textarea {
-  font-size: 1.1em;
-  font-family: $font1;
-  font-weight: 300;
-  color: #888;
-  padding: .5em;
-  outline: 0;
-  border:1px solid $color1;
-  @include border-radius(4px);
+  font-size: $form-input-font-size;
+  color: $form-input-font-color;
+  border:$form-input-border-width solid $form-input-border-color;
+  @include border-radius($form-input-border-radius);
   background-color: #fff;
-  height: 52px;
   text-align: left;
-  &:hover {
-  //        border-color: #a5a5a5;
-  }
-  &:focus {
-  //        border-color: #999;
-  }
-  @include form-placeholer{
-    font-size: 18px;
-    color:#888;
-    text-align: center;
-  }
-  &.is-error{
-    border-color:red;
-    @include box-shadow(1px 0 2px 0px red,-1px 0 2px 0px red);
-  }
-}
 
-.row-input{
-  padding: 0;
-  margin: 16px 0;
-  label{
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 23px;
-    line-height:1.1;
-  }
-}
-
-textarea{
-  text-align: left;
-  height: 235px;
-  resize: none;
-  overflow: auto;
 }
