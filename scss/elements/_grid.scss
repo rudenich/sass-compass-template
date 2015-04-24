@@ -1,4 +1,10 @@
 /*Сетка на подобие бутстрапа*/
+
+.grid-row{
+  @include clearfix;
+}
+
+
 .grid-column-1-2{
   float: left;
   width:48.3%;
@@ -15,10 +21,7 @@
 .grid-offset{
   margin-left: 2%;
 }
-.grid-last{
+.grid-column-last{
   margin-right: 0;
   float: right;
-}
-.grid-row{
-  @include clearfix;
 }

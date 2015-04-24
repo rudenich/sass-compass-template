@@ -1,10 +1,10 @@
+$color1:#111 !default;
 $bread-crumbs-link-color:#888;
 $bread-crumbs-span-color:$color1;
 $bread-crumbs-font-size:14px;
 
 .b-breadcrumbs{
   width:100%;
-  @include inline-block-list;
   font-size: $bread-crumbs-font-size;
   &>li+li{
     &:before{

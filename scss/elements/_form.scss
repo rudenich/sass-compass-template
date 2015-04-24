@@ -12,6 +12,12 @@ $form-input-text-transform:uppercase;
 
 $form-row-space:1.1rem;
 
+$form-title-line-height:2;
+$form-title-font-size:2em;
+$form-title-font-weight:bolder;
+
+$form-label-font-size:1.6rem;
+
 %form-input-common{
   @include border-radius($form-input-border-radius);
 
@@ -32,6 +38,7 @@ input[type="date"],
 input[type="search"]{
   @extend %form-input-common;
   height: $form-input-text-height;
+  width:100%;
 }
 
 textarea{
@@ -40,9 +47,17 @@ textarea{
 
 label{
   display: block;
+  font-size: $form-label-font-size;
   margin-top: ($form-input-text-height - $form-input-font-size)/2;
 }
 
 .form__row+.form__row{
   margin-top: $form-row-space;
+}
+
+.form__title{
+  text-align: center;
+  font-size: $form-title-font-size;
+  line-height: $form-title-line-height;
+  font-weight: $form-title-font-weight;
 }
