@@ -1,22 +1,48 @@
-$form-input-font-size:1em;
+$form-input-font-size:1rem;
 $form-input-font-color:#111;
 
-$form-input-border-radius:3px;
+$form-input-border-radius:0;
 $form-input-border-width:1px;
-$form-input-border-color:#111;
+$form-input-border-color:#b2b2b2;
 
+$form-input-padding:0 0 0 0.5rem;
+
+$form-input-text-height:3.7rem;
+$form-input-text-transform:uppercase;
+
+$form-row-space:1.1rem;
+
+%form-input-common{
+  @include border-radius($form-input-border-radius);
+
+  padding: $form-input-padding;
+  font-size: $form-input-font-size;
+  color: $form-input-font-color;
+  border:$form-input-border-width solid $form-input-border-color;
+  background-color: #fff;
+  text-align: left;
+  text-transform: $form-input-text-transform;
+}
 
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="password"],
 input[type="date"],
-input[type="search"],
-textarea {
-  font-size: $form-input-font-size;
-  color: $form-input-font-color;
-  border:$form-input-border-width solid $form-input-border-color;
-  background-color: #fff;
-  text-align: left;
-  @include border-radius($form-input-border-radius);
+input[type="search"]{
+  @extend %form-input-common;
+  height: $form-input-text-height;
+}
+
+textarea{
+  @extend %form-input-common;
+}
+
+label{
+  display: block;
+  margin-top: ($form-input-text-height - $form-input-font-size)/2;
+}
+
+.form__row+.form__row{
+  margin-top: $form-row-space;
 }
